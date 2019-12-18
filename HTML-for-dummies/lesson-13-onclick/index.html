@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Onclick</title>
+  <style>
+    li {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <input id="new-item" type="text" />
+  <button onclick="addItem()">Add</button>
+  <br>
+  <input type="text" id="name" placeholder="Enter your name" />
+  <button onclick="sayHello()">Say Hi!</button>
+  <ul id="item">
+    <!-- <p class="foo">p1</p>
+    <p class="foo">p2</p>
+    <p class="foo">p3</p>
+    <p class="foo">p4</p>
+    <p class="foo">p5</p> -->
+  </ul>
+  <script>
+    function sayHello(){
+      var input = document.getElementById('name');
+      var name = 'Hi '+input.value;
+      alert(name);
+    }
+    var content = [
+      'content p1',
+      'content p2',
+      'content p3',
+      'content p4',
+      'content p5'
+    ];
+
+    function addItem(){
+      // get value input field
+      var input = document.getElementById('new-item');
+      var newItem = input.value;
+      // add content aray
+      content.push(newItem);
+      // re-render
+      render();
+      //clear input
+      input.value = '';
+    }
+
+    function render() {
+      var item =  document.getElementById('item');
+      var list = content.map(item => {
+        return '<li>' + item + '</li>'
+      });
+      item.innerHTML = list.join('');  
+    }
+    render();
+
+    </script>
+</body>
+</html>

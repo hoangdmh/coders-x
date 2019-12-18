@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <h1>My blog</h1>
+  <div id="item-list">
+    <h2>My tittle</h2>
+    <p>My content</p>
+    
+  </div> -->
+  <div id="item">
+    <p class="foo">p1</p>
+    <p class="foo">p2</p>
+    <p class="foo">p3</p>
+    <p class="foo">p4</p>
+    <p class="foo">p5</p>
+  </div>
+  <script type="text/javascript">
+    /* 
+      document.head
+      document.body 
+
+      - getElementsByClassName
+        + lay danh sách các elemment có class tương ứng
+
+      - getElementsByTagName
+        + lay danh sách các elemment có tag name tương ứng
+
+      - querySelector
+        + lay ra element đầu tiên tương ứng với CSS selectors đó
+        
+      - querySelectorAll
+        + lay ra tất cả element tương ứng với CSS selectors đó
+    */
+    // var newContent = document.createElement('p');
+    // newContent.textContent = 'The new content';
+    // document.getElementById('item-list').appendChild(newContent);
+
+    var content = [
+      'content p1',
+      'content p2',
+      'content p3',
+      'content p4',
+      'content p5'
+    ];
+
+    var itemP =  document.getElementsByTagName('p');
+    console.log(itemP.length);
+    var listItem = [];
+    for(var i = 0; i <= itemP.length; i++){
+      //listItem.push(itemP[i])
+      //console.log(itemP[i].textContent);
+      itemP[i].textContent = 'abc';
+    }
+
+    console.log(listItem);
+  </script>
+</body>
+</html>

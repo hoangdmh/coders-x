@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ứng dụng mảng vào thực tế</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+  <style>
+    .form-group, .list-group {
+      width: 320px;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-center">Ứng dụng mảng vào thực tế</h1>
+  
+  <div class="form-group">
+    <label for="">Gender</label>
+    <select class="custom-select" id="gender">
+      <option selected value="all">All</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+  <ul id="list-group" class="list-group">
+    <!-- <li class="list-group-item">Active item</li>
+    <li class="list-group-item">Item</li>
+    <li class="list-group-item">Disabled item</li> -->
+  </ul>
+  <script>
+    var content = [
+      {name: "Tom", gender: "male"},
+      {name: "Maria", gender: "female"},
+      {name: "Jason", gender: "male"},
+      {name: "Sora", gender: "female"},
+      {name: "Teo", gender: "male"},
+      {name: "Takuda", gender: "male"}
+    ];
+
+    var gender = document.getElementById('gender');
+    gender.addEventListener('change', handleSelect);
+    
+
+    function handleSelect(){
+      var value = gender.value;
+      if(value === 'all'){
+        return render(content);
+      }
+      var listFilter = content.filter( list => {
+        return list.gender === value;
+      });
+      render(listFilter);
+    }
+
+    function render(content){
+      var listGroup = document.getElementById('list-group');
+      var listContent = content.map( item => {
+        return `<li class="list-group-item">${item.name}</li>`
+      });
+      listGroup.innerHTML = listContent.join('');
+    }
+    render(content);
+  </script>
+</body>
+</html>

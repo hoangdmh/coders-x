@@ -4,3 +4,4 @@
 
 **firebase serve**
 
+**firebase deploy**

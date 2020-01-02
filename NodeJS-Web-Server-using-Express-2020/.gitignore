@@ -1,0 +1,8 @@
+node_modules/
+public/components
+.nyc_output
+.sass-cache
+bjtech.key
+dist/
+.next/
+package-lock.json

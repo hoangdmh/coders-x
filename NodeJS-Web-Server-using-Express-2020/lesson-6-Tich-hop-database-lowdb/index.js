@@ -32,12 +32,12 @@ app.get('/users', function (request, response) {
   response.render('user/index', {
     users: db.get('users').value()
   });
-  console.log('Users ',db.get('users').value());
+  console.log('Users => ',db.get('users').value());
 });
 
 app.get('/users/search', function (request, response) {
   var q = request.query.q;
-
+  var users = db.get('users').value();
   var mathFilter = users.filter(user => {
     return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
   });

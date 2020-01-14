@@ -1,0 +1,39 @@
+extends ../layout/common
+block content
+  
+  //- p.img-content
+  //-   img(src="/images/gat.png", alt="alt")
+
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5
+    a.navbar-brand(href='/') CodeX
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item.active
+          a.nav-link(href='/')
+            | Home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='/users') User
+    form.form-inline(action="/users/search" method="GET")
+      input.form-control.mr-sm-2(type='text', name="q" id="search", placeholder='Search', aria-label='Search')
+      button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
+  .container
+    .d-flex.mb-3
+      h2.mb-0.mr-auto List User
+      a.btn.btn-primary(href="/users/create") Create user
+    table.table.table-striped
+      thead
+        tr
+          th(scope='col') Name
+          th(scope='col') Phone
+          th(scope='col') Action
+      tbody
+        each user in users
+          tr
+            th= user.name
+            td= user.phone
+            td
+              a.btn.btn-info(href="/users/" +user.id) View

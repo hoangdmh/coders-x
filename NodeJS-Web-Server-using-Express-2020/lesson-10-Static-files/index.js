@@ -5,6 +5,8 @@ var authRouter = require('./routers/auth.router')
 // middleware for cookie
 var cookieParser = require('cookie-parser')
 
+//import middleware
+var authMiddleware = require('./middlewares/auth.middleware');
 
 //module database
 var db = require('./db');
@@ -24,7 +26,7 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.use('/users', userRouter);
+app.use('/users', authMiddleware.requireAuth, userRouter);
 app.use('/auth', authRouter);
 
 app.use(express.static('public'))

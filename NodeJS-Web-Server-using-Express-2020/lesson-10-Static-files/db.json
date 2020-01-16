@@ -2,7 +2,9 @@
   "users": [
     {
       "name": "Do Minh Hoang",
-      "id": "VUWu2IEi"
+      "id": "VUWu2IEi",
+      "email": "dmhoang08t1@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Trần Hào Nam",

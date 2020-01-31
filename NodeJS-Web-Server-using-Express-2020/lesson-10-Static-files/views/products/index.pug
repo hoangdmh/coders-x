@@ -1,0 +1,13 @@
+extends ../layout/common
+block content
+  h1.text-center.mb-3 This page Product
+  .container
+    .row
+      each product in products
+        .col-12.col-md-6.col-lg-4
+          .card
+            img.card-img-top(src=product.image, alt='Card image cap')
+          .card-body
+            h4.card-title
+              a(href='/', title='View Product')=product.name
+            p.card-text=product.description

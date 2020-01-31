@@ -1,7 +1,8 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 var userRouter = require("./routers/user.router");
-var authRouter = require('./routers/auth.router')
+var authRouter = require('./routers/auth.router');
+var productRouter = require('./routers/product.router');
 // middleware for cookie
 var cookieParser = require('cookie-parser')
 
@@ -28,6 +29,7 @@ app.get('/', function (req, res) {
 
 app.use('/users', authMiddleware.requireAuth, userRouter);
 app.use('/auth', authRouter);
+app.use('/products', productRouter);
 
 app.use(express.static('public'))
 

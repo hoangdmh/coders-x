@@ -27,12 +27,15 @@ block content
     table.table.table-striped
       thead
         tr
+          th(scope='col') Avatar
           th(scope='col') Name
           th(scope='col') Phone
           th(scope='col') Action
       tbody
         each user in users
           tr
+            th
+              img(src=user.avatar, alt="", width=64)
             th= user.name
             td= user.phone
             td

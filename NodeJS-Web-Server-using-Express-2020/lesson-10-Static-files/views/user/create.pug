@@ -5,13 +5,16 @@ block content
       .col-5
         h1  Create user
 
-        form(action="/users/create", method="post")
+        form(action="/users/create", method="post", enctype="multipart/form-data")
           .form-group
             label(for="name") Name
             input#name.form-control(type="text", name="name" value=value ? value.name : '')
           .form-group
             label(for="phone") Phone
             input#phone.form-control(type="text", name="phone" value=value ? value.phone : '')
+          .form-group
+            label(for="avatar") Avatar
+            input#avatar.form-control-file(type="file", name="avatar" )
 
             button.btn.btn-primary.mt-3 Create
         if errors

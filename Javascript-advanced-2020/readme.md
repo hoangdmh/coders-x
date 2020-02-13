@@ -21,9 +21,17 @@
 
 - Arrow function không thể sử dụng làm hàm constructor
 
+
+
 ## Template string in Javascript
 - var multiLine = `Tôi dang tay ôm nước vào lòng, Sông mở nước ôm tôi vào dạ`;
 - var cat = `Con mèo`;
 - var embededVar = `${cat} đang bay?`;
 - var price = 500;
 - var embededEx = `1 cái kem giá ${price}đ => ${cat} mua 2 cái kem phải trả ${2 * price}đ`;
+
+
+## arguments in Javascript
+- nó là một biến cục bộ bên trong function đó
+- arrow function không có arguments
+- Có thể tham chiếu đến các đối số của function đó thông qua object arguments

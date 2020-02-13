@@ -12,3 +12,11 @@
 - Khai báo biến bằng const thì phải gán giá trị cho nó ngay
 
 - Khi khai bao const với kiểu biến là reference (object, array, function) thì chúng ta có thể cập nhật giá trị của biến bên trong dc.
+
+
+## arrow function in Javascript
+- arrow function không có context cho nên biến this của arrow function chín là this của function gần nó nhất (hàm mà nó nằm trong)
+
+- Arrow function không phù hợp làm method cho object
+
+- Arrow function không thể sử dụng làm hàm constructor

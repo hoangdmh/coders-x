@@ -35,3 +35,13 @@
 - nó là một biến cục bộ bên trong function đó
 - arrow function không có arguments
 - Có thể tham chiếu đến các đối số của function đó thông qua object arguments
+
+
+## Default parameters
+` function getName(name = 'friend'){
+    if(name == undefined){
+      return ${name}
+    }
+  }
+  getName();
+`

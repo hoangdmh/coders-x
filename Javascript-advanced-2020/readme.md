@@ -38,10 +38,24 @@
 
 
 ## Default parameters
-` function getName(name = 'friend'){
+- biến được gán giá trị mặc định bên trong tham số của hàm
+
+` 
+  function getName(name = 'friend'){
     if(name == undefined){
       return ${name}
     }
   }
   getName();
 `
+
+
+## method call in Javascript
+` nameFunction.call(thisArg, arg1, arg2)`
+- call() cho phép bạn truyền vào một object và các đối số cách nhau bởi dấu phẩy
+
+
+
+## method apply in Javascript
+` nameFunction.apply(thisArg, [argArray])`
+- call() cho phép bạn truyền vào một object và các đối số thông qua mảng

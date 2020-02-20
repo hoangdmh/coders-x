@@ -40,14 +40,14 @@
 ## Default parameters
 - biến được gán giá trị mặc định bên trong tham số của hàm
 
-` 
+```js
   function getName(name = 'friend'){
     if(name == undefined){
       return ${name}
     }
   }
   getName();
-`
+```
 
 
 ## method call in Javascript

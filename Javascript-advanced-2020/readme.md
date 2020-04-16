@@ -59,14 +59,3 @@
 ## method apply in Javascript
 ` nameFunction.apply(thisArg, [argArray])`
 - call() cho phép bạn truyền vào một object và các đối số thông qua mảng
-
-
-
-# rest in javascript
-- ...rest (phan con lai) dung khi khong biet tham so dau vao la bao nhieu
-```js
-function sum(...number) {
-  return number.reduce((a, b) => a + b);
-}
-console.log(sum(1, 2, 3, 4));
-```
